@@ -27,6 +27,9 @@ public class Main {
 					spelare.newBoard();
 					spelare.placeraSkepp();
 					spelare.skjutSkepp();
+					spelare.skjutSkepp();
+					//spelare.skjutSkepp();
+					//spelare.skjutSkepp();
 				//	spelare.placeraSkepp(spelare.riktning());
 					//Spelplan plan1 = new Spelplan();
 					//plan1.newBoard();

@@ -97,6 +97,27 @@ public class Spelare {
 		}
 	}
 	
+	/*public void markeraSkott() {
+		Scanner scan = new Scanner(System.in);
+		String koordinater = scan.nextLine();
+		skjutSkepp(koordinater);
+		while (skjutSkepp(koordinater)!=true) {
+			System.out.println("Du har redan skjutit här. Skriv en annan koordinat: ");
+			koordinater = scan.nextLine();
+			skjutSkepp(koordinater);
+		}
+		
+		printBoard();
+	}*/
+	
+	public void markeraSkott(boolean e) {
+ 
+		if (e == true) {
+			skjutSkepp();
+		}
+		printBoard();
+	}
+	
 	public void skjutSkepp() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vart vill du skjuta? ");
@@ -108,6 +129,10 @@ public class Spelare {
         char miss = '0';
         char träff = '1';
         
+        boolean miss1 = true;
+        boolean hit1 = true;
+        boolean redan = false;
+        
         Bitar boatpiece = new Bitar(hashtag);
         Bitar boatpiece2 = new Bitar(miss);
         Bitar boatpiece3 = new Bitar(träff);
@@ -117,20 +142,30 @@ public class Spelare {
             //System.out.println(kollaNyckel);
             if(kollaNyckel.equals(nycklar.toString())) {
             	Koordinater replaceCoords = new Koordinater(kollaNyckel);
+            	
             	if(lookup(nycklar).toString().contains("#")) {
             		System.out.println("Du träffade!");
             		map.put(replaceCoords, boatpiece3);
+            		boolean e = false;
+            		markeraSkott(e);
             	}
-            	if(lookup(nycklar).toString().contains("~")) {
+            	else if(lookup(nycklar).toString().contains("~")) {
             		System.out.println("Du missade!");
             		map.put(replaceCoords, boatpiece2);
+            		boolean e = false;
+            		markeraSkott(e);
             	}
-            	if(lookup(nycklar).toString().contains("1" || "0")) {
-            		
+            	else {
+            		System.out.println("Du har redan skjutit här");
+            		boolean e = true;
+            		markeraSkott(e);
             	}
+            	
+            	
             }
         }
-        printBoard();
+        
+       // printBoard();
 
     }
 
