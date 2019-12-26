@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Skepp {
-
+public class Skepp{
 	/*
 	 * private String [] batett; private String [] battva; private String [] battre;
 	 * private String [] batfour; private String [] batfem;
@@ -62,54 +61,79 @@ public class Skepp {
 	
 	/*public void skapaSkepp(Skepp skepp) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Här kan du skapa ett skepp. Vad ska ditt skepp heta?");
+		System.out.println("HÃ¤r kan du skapa ett skepp. Vad ska ditt skepp heta?");
 		String namn = scan.nextLine();
 		skepp.setNamn(namn);
-		System.out.println("Välj en storlek på ditt skepp!");
+		System.out.println("VÃ¤lj en storlek pÃ¥ ditt skepp!");
 		int storlek = scan.nextInt();
 		skepp.setStorlek(storlek);
-
 	}*/
 	
-	public void placeraSkepp(Skepp c) {
+	public void placeraSkepp(Skepp c, boolean val) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Nu ska du placera dina skepp. Välj koordinater a-j och sedan position 0-9! ");
+		System.out.println("Nu ska du placera dina skepp. VÃ¤lj koordinater a-j och sedan position 0-9! ");
 		for(Skepp obj : skeppar) {
 			System.out.println("Vart vill du placera " + getNamn() + "?");
 			String koordinat = scan.nextLine();
-			for (int i=0; i<getStorlek(); i++) {
-				koordinater.add(koordinat);
+			if (val = true) {
+			//	kollaBoard(koordinat);
+				char yLed = koordinat.charAt(0);
+				//char yBak = yLed-1;
+				char xLed = koordinat.charAt(1);
+				
 			}
 			
 		}
 	}
+	
+	
+	public boolean kollaBoard(String koordinater, boolean val) {
+		char yLed = koordinater.charAt(0);
+		char yBak = (char) (koordinater.charAt(0)-1);
+		char xLed = koordinater.charAt(1);
+		char xBak = (char) (koordinater.charAt(1)-1);
+		
+		if (val = true) {
+			if (xLed + getStorlek()>10) {
+				System.out.println("BÃ¥ten Ã¤r fÃ¶r stor");
+				return false;
+			}
+		//	for (Koordinater nycklar : map.keySet()) {
+						
+		//	}
+		}
+		else {
+		
+		}
+		return true;
+		
+	}
 
 	/*public String[] addaFlotta() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Nu ska du lägga till pjäser i flottan!");
-		String[] båtEtt = { "ett", "två" };
-		String[] båtTvå = { "ett", "två", "tre" };
-		String[] båtTre = { "ett", "två", "tre", "fyra" };
-		String[] båtFyra = { "ett", "två", "tre", "fyra", "fem" };
-		System.out.println("Lägg till båt 1 som är av storlek 2! ");
-		for (int i = 0; i < båtEtt.length; i++) {
-			System.out.println("Vart ska första biten sitta? ");
+		System.out.println("Nu ska du lÃ¤gga till pjÃ¤ser i flottan!");
+		String[] bÃ¥tEtt = { "ett", "tvÃ¥" };
+		String[] bÃ¥tTvÃ¥ = { "ett", "tvÃ¥", "tre" };
+		String[] bÃ¥tTre = { "ett", "tvÃ¥", "tre", "fyra" };
+		String[] bÃ¥tFyra = { "ett", "tvÃ¥", "tre", "fyra", "fem" };
+		System.out.println("LÃ¤gg till bÃ¥t 1 som Ã¤r av storlek 2! ");
+		for (int i = 0; i < bÃ¥tEtt.length; i++) {
+			System.out.println("Vart ska fÃ¶rsta biten sitta? ");
 			String indexEtt = scan.nextLine();
-			båtEtt[0] = indexEtt;
+			bÃ¥tEtt[0] = indexEtt;
 			System.out.println("Vart ska andra delen ligga?");
 			String indexTva = scan.nextLine();
-			båtEtt[1] = indexTva;
+			bÃ¥tEtt[1] = indexTva;
 		}
-		for (int i = 0; i < båtTvå.length; i++) {
-			System.out.println("Vart ska första biten sitta? ");
+		for (int i = 0; i < bÃ¥tTvÃ¥.length; i++) {
+			System.out.println("Vart ska fÃ¶rsta biten sitta? ");
 			String indexEtt = scan.nextLine();
-			båtTvå[0] = indexEtt;
+			bÃ¥tTvÃ¥[0] = indexEtt;
 			System.out.println("Vart ska andra delen ligga?");
 			String indexTva = scan.nextLine();
-			båtEtt[1] = indexTva;
+			bÃ¥tEtt[1] = indexTva;
 		}
-		return båtTvå;
-
+		return bÃ¥tTvÃ¥;
 	}*/
 
 
