@@ -64,7 +64,7 @@ public class Spelare {
 			return ("Namn:" + this.namn + " Storlek: " + this.storlek + "\n");
 		}
 		else {
-			return ("Namn:" + this.namn + " Storlek: " + this.storlek + "\n" + "\n" + "Koordinater " + this.skeppKoordinater);
+			return ("Namn:" + this.namn + " Storlek: " + this.storlek + "\n" + "Koordinater " + this.skeppKoordinater);
 		}
 	}
 	
@@ -462,9 +462,7 @@ public class Spelare {
 				System.out.println("Placera om " + obj.getNamn());
 				koordinat = scan.nextLine();
 				riktning = riktning();
-				
-				
-				 
+			 
 			}
 			addBoat(obj.getNamn(),koordinat, riktning, obj.getStorlek());
 			printBoard();

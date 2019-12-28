@@ -8,7 +8,7 @@ public class Spelplan {
 	private int lengd = 0;
 	Scanner scan = new Scanner(System.in);
 	private String namn = null;
-	Skepp skepp = new Skepp(lengd, namn);
+	//Skepp skepp = new Skepp(lengd, namn, skeppKoordinater);
 	
 	LinkedHashMap<Koordinater, Bitar> map = new LinkedHashMap<Koordinater, Bitar>(); 
 	final int storlek = 10;
@@ -16,7 +16,7 @@ public class Spelplan {
 		return map.get(nyckel);
 	}
 	
-	public void skapaSkepp(){
+	/*public void skapaSkepp(){
 		
 		System.out.println("Här skapar du fler skepp!");
 		System.out.println("Här kan du skapa ett skepp. Vilken storlek vill du ha?");
@@ -28,7 +28,7 @@ public class Spelplan {
 		skepp.setNamn(namn2);
 		Skepp.addSkepp(skepp);
 		Skepp.printSkepp();
-	}
+	}*/
 	
 	public void printBoard() {
 		

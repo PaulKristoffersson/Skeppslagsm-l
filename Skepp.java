@@ -12,11 +12,21 @@ public class Skepp{
 	public String namn;
 	public int storlek;
 	static LinkedList<Skepp> skeppar = new LinkedList<Skepp>();
-	static ArrayList<String> koordinater = new ArrayList<String>();
+	LinkedList<Koordinater> skeppKoordinater = new LinkedList<Koordinater>();
 	
-	public Skepp(int storlek, String namn) {
+
+	public Skepp(int storlek, String namn, LinkedList <Koordinater> skeppKoordinater) {
 		this.storlek = storlek;
 		this.namn = namn;
+		this.skeppKoordinater = skeppKoordinater;
+	}
+
+	public LinkedList<Koordinater> getSkeppKoordinater() {
+		return skeppKoordinater;
+	}
+
+	public void setSkeppKoordinater(LinkedList<Koordinater> skeppKoordinater) {
+		this.skeppKoordinater = skeppKoordinater;
 	}
 
 	public int getStorlek() {
@@ -39,9 +49,9 @@ public class Skepp{
 	public static void addSkepp(Skepp c) {
 		skeppar.add(c);
 	}
-	public static void addKoordinat(String c) {
+	/*public static void addKoordinat(String c) {
 		koordinater.add(c);
-	}
+	}*/
 
 	public static void printSkepp() {
 		for (Skepp obj : skeppar) {
@@ -49,11 +59,11 @@ public class Skepp{
 		}
 	}
 	
-	public static void printKoordinat() {
+	/*public static void printKoordinat() {
 		for (String obj : koordinater) {
 			System.out.println(obj);
 		}
-	}
+	}*/
 
 	public String toString() {
 		return ("Namn:" + this.namn + " Storlek: " + this.storlek + "\n");

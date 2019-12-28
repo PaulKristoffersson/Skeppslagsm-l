@@ -25,9 +25,10 @@ public class Main {
 				switch (val) {
 				case 1:
 					spelare.newBoard();
+					spelare.newEnemyBoard();
 					spelare.placeraSkepp();
-					spelare.skjutSkepp();
-					spelare.skjutSkepp();
+					spelare.skjutKoordinat();
+					spelare.skjutKoordinat();
 					//spelare.skjutSkepp();
 					//spelare.skjutSkepp();
 				//	spelare.placeraSkepp(spelare.riktning());
@@ -50,7 +51,9 @@ public class Main {
 					}
 
 					break;
-
+				case 3: 
+					spelaSpel();
+					break;
 				case 4:
 			//		Spelare spelare = new Spelare();
 					spelare.skapaSkepp();
@@ -71,6 +74,40 @@ public class Main {
 			// TODO Auto-generated method stub
 
 		}
+	}
+	
+	public static void spelaSpel() {
+		int spelare1Liv = 10;
+		int spelare2Liv = 10;
+		Spelare spelare1 = new Spelare();
+		Spelare spelare2 = new Spelare();
+		spelare1.newBoard();
+		spelare1.newEnemyBoard();
+		spelare1.printSkepp();
+		System.out.println("Nu ska spelare 1 placera sina båtar");
+		spelare1.placeraSkepp();
+		spelare1.printSkepp();
+		
+		Spelare.clearScreen();
+		
+		spelare2.newBoard();
+		spelare2.newEnemyBoard();
+		System.out.println("Nu ska spelare 2 placera sina båtar");
+		spelare2.placeraSkepp();
+		Spelare.clearScreen();
+		
+		while (spelare1Liv !=0 || spelare2Liv !=0){
+			System.out.println("Det är spelare etts tur att skjuta");
+			spelare2.skjutKoordinat();
+			System.out.println("\n");
+			spelare1.printBoard();
+			
+			System.out.println("Det är spelare tvås tur att skjuta");
+			spelare1.skjutKoordinat();
+			System.out.println("\n");
+			spelare2.printBoard();
+		}
+		
 	}
 
 	private static void printMenu() {
